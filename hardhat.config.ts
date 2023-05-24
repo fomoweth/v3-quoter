@@ -3,7 +3,6 @@ import { HardhatUserConfig } from "hardhat/config";
 import { HDAccountsUserConfig } from "hardhat/types";
 import "hardhat-contract-sizer";
 import "hardhat-deploy";
-import "hardhat-tracer";
 import { ChainId, envConfig, getRpcUrl } from "./config";
 
 const getAccounts = (count: number = 20): HDAccountsUserConfig => {
