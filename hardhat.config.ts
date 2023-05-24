@@ -2,8 +2,7 @@ import "@nomicfoundation/hardhat-toolbox";
 import { HardhatUserConfig } from "hardhat/config";
 import { HDAccountsUserConfig } from "hardhat/types";
 import "hardhat-contract-sizer";
-import "hardhat-deploy";
-import { ChainId, envConfig, getRpcUrl } from "./config";
+import { envConfig, RPC_URL } from "./config";
 
 const getAccounts = (count: number = 20): HDAccountsUserConfig => {
     return {
@@ -24,7 +23,7 @@ const config: HardhatUserConfig = {
     solidity: {
         compilers: [
             {
-                version: "0.8.15",
+                version: "0.8.17",
                 settings: {
                     viaIR: true,
                     evmVersion: "istanbul",
@@ -42,9 +41,9 @@ const config: HardhatUserConfig = {
     networks: {
         hardhat: {
             allowUnlimitedContractSize: false,
-            chainId: ChainId.MAINNET,
+            chainId: 1,
             forking: {
-                url: getRpcUrl(ChainId.MAINNET),
+                url: RPC_URL,
                 blockNumber: !!envConfig.FORK_BLOCK_NUMBER
                     ? +envConfig.FORK_BLOCK_NUMBER
                     : undefined,
@@ -52,8 +51,8 @@ const config: HardhatUserConfig = {
             accounts: getAccounts(),
         },
         mainnet: {
-            chainId: ChainId.MAINNET,
-            url: getRpcUrl(ChainId.MAINNET),
+            chainId: 1,
+            url: RPC_URL,
             accounts: getAccounts(),
         },
     },
@@ -73,11 +72,6 @@ const config: HardhatUserConfig = {
     },
     mocha: {
         timeout: 60000,
-    },
-    namedAccounts: {
-        deployer: {
-            default: 0,
-        },
     },
 };
 

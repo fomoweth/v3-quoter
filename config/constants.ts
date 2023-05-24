@@ -1,10 +1,8 @@
-export enum ChainId {
-    MAINNET = 1,
-    OPTIMISM = 10,
-    POLYGON = 137,
-    ARBITRUM = 42161,
-    AVALANCHE = 43114,
-}
+import { envConfig } from "./env";
+
+export const RPC_URL = "https://mainnet.infura.io/v3/".concat(
+    envConfig.INFURA_API_KEY
+);
 
 export const FACTORY = "0x1F98431c8aD98523631AE4a59f267346ea31F984";
 export const QUOTER_V2 = "0x0209c4Dc18B2A1439fD2427E34E7cF3c6B91cFB9";

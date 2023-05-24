@@ -15,7 +15,6 @@
         "@nomicfoundation/hardhat-toolbox": "^2.0.2",
         "dotenv": "^16.0.3",
         "hardhat": "^2.14.0",
-        "hardhat-contract-sizer": "^2.8.0",
-        "hardhat-deploy": "^0.11.23"
+        "hardhat-contract-sizer": "^2.8.0"
     }
 }

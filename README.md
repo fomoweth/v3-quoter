@@ -1,13 +1,45 @@
-# Sample Hardhat Project
+# V3-Quoter
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Quoter contract for Uniswap V3 pools that can get quotes via `static-call`.
 
-Try running some of the following tasks:
+## Installation
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
+```bash
+git clone https://github.com/neocortex404/v3-quoter
+
+cd v3-quoter
+
+npm install
+```
+
+## Usage
+
+Create an environment file `.env` with the following content:
+
+```text
+INFURA_API_KEY=YOUR_INFURA_API_KEY
+CMC_API_KEY=YOUR_COIN_MARKET_CAP_API_KEY
+ETHERSCAN_API_KEY=YOUR_ETHERSCAN_API_KEY
+MNEMONIC=YOUR_MNEMONIC (Optional)
+FORK_BLOCK_NUMBER=BLOCK_NUMBER (Optional)
+```
+
+To compile the contracts:
+
+```bash
+# compile contracts to generate artifacts and typechain-types
+npm run compile
+
+# remove the generated artifacts and typechain-types
+npm run clean
+
+# clean and compile
+npm run build
+```
+
+To run the test
+
+```bash
+# to run hardhat test
+npm test
 ```
